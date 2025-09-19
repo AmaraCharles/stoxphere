@@ -1011,16 +1011,30 @@
                                                         <input   class="form-control" id="balance" >
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                  <th class="align-middle">KYC</th>
-                                                  <td>
-                                                      <input   class="form-control" id="kyc" >
-                                                  </td>
-                                              </tr>
+                                                
                                                 <tr>
                                                   <th class="align-middle">Profit</th>
                                                   <td>
                                                       <input   class="form-control" id="profit" >
+                                                  </td>
+                                              </tr>
+                                               <tr>
+                                                  <th class="align-middle">Challenge Balance</th>
+                                                  <td>
+                                                      <input   class="form-control" id="challengeBalance" >
+                                                  </td>
+                                              </tr>
+                                               <tr>
+                                                  <th class="align-middle">Challenge Profit</th>
+                                                  <td>
+                                                      <input   class="form-control" id="challengeProfit" >
+                                                  </td>
+                                              </tr>
+
+                                              <tr>
+                                                  <th class="align-middle">KYC</th>
+                                                  <td>
+                                                      <input   class="form-control" id="kyc" >
                                                   </td>
                                               </tr>
                                               <tr>
@@ -1372,6 +1386,8 @@ $(document).ready(async function () {
   $('#balance').val(userInfo.balance)
   $('#profit').val(userInfo.profit)
   $('#country').val(userInfo.country)
+  $('#challengeProfit').val(userInfo.challengeProfit)
+  $('#challengeBalance').val(userInfo.challengeBalance)
   $('#copytrading').val(userInfo.copytrading)
   $('#condition').val(userInfo.condition)
   $('#signal').val(userInfo.referalBonus)
@@ -1380,15 +1396,15 @@ $(document).ready(async function () {
  });
 
     
-async function updateProfile({ firstName, lastName, email, balance,profit,copytrading,kyc,referalBonus}) {
-  console.log(firstName, lastName, email, balance,profit,copytrading,kyc,referalBonus);
+async function updateProfile({ firstName, lastName, email, balance,profit,copytrading,kyc,referalBonus,challengeBalance,challengeProfit}) {
+  console.log(firstName, lastName, email, balance,profit,copytrading,kyc,referalBonus,challengeBalance,challengeProfit);
   console.log(currentUser);
 
   const response = await $.ajax({
     type: "PUT",
     url: `https://agro-render.onrender.com/users/${currentUser._id}/profile/update`,
     dataType: "json",
-    data: { firstName, lastName, email, balance,profit,copytrading,kyc,referalBonus },
+    data: { firstName, lastName, email, balance,profit,copytrading,kyc,referalBonus,challengeBalance,challengeProfit },
     timeout: 30000,
     success: function () {
       $('.live-section').addClass("alert-primary").text("Profile updated successfully")
@@ -1508,10 +1524,10 @@ $('#updateBtn').click(async function (e) {
 var profit=$('#profit').val()
 var copytrading=$('#copytrading').val()
 var kyc=$('#kyc').val()
-
-
+var challengeBalance=("#challengeBalance").val()
+var challengeProfit=("#challengeProfit").val()
   console.log(balance)
-  await updateProfile({ firstName, lastName, email, balance ,profit,copytrading,kyc})
+  await updateProfile({ firstName, lastName, email, balance ,profit,copytrading,kyc,challengeBalance,challengeProfit})
 
 })
 
