@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <!-- saved from url=(0055)ongoing.html -->
 <html lang="en"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_K7Kp6H"></div><head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
 body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
 </style>
-    <title>Stoxphere - User Dashboard</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Stoxphere - User Dashboard</title>
+   
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="This User Dashboard was built with love.">
@@ -1337,7 +1340,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                    
                            $(document).ready(async function () {
                                 let sum;
-    
+    await fetchUserInfo()
         const userInfo=await fetchUserInfo()
            console.log(userInfo);
            
@@ -1381,7 +1384,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <span class="nav-title">Connect Wallet</span></a> </li>
                                         <li><a href="brokers.html" aria-expanded="false"><i class="fas fas fa-bar-chart-o"></i><span class="nav-title">Copy Trading</span></a> </li>
                              <!-- <li><a href="livetrade.html" aria-expanded="false"><i class="fas fas fa-eye"></i><span class="nav-title">Live trade</span></a> </li> -->
-                                        <li><a href="placetrade.html" aria-expanded="false"><i class="fas fa-rotate-right"></i><span class="nav-title">Place Trade</span></a></li>
+                                        <li><a href="placetrade.html" aria-expanded="false"><i class="fas fa-rotate-right"></i><span class="nav-title">Place Trade</span></a> </li>
            
                                        <li><a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-suitcase"></i><span class="nav-title">Transactions</span></a>
                                 <ul aria-expanded="false" class="collapse">
@@ -1436,7 +1439,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                                 <!-- begin page title -->
                                 <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                     <div class="page-title mr-4 pr-4 border-right">
-                                        <h1>Ongoing-Investments</h1> 
+                                        <h1>Place Trade</h1> 
                                     </div>
                                     <div class="breadcrumb-bar align-items-center">
                                         <nav>
@@ -1447,7 +1450,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                                                 <li class="breadcrumb-item">
                                                     Dashboard
                                                 </li>
-                                                <li class="breadcrumb-item active text-primary" aria-current="page">Default</li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">Challenges</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -1476,389 +1479,829 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
 
                              
-
-
-
-
-            <!-- <div class="row">
-              <div class="col-md-12">
-                  <h4 class="alert border-0 alert-primary bg-success m-b-30 alert-dismissible fade show border-radius-none" role="alert">
-                  Hello, <strong class="text-warning" id="userCaption"></strong> You are currently on a copy trade with <span class="text-primary">Stoxphere</span> on <span id="displayStocks" class="text-secondary"></span> 
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <i class="fas fa-close"></i> 
-                      </button> 
-                  </h4>
-              </div> 
-            </div> -->
-
-            <div class="datatable-wrapper table-responsive">
-           
-
-                <table  class="table tablex display compact  table-striped table-bordered dataTable no-footer" >
-        <thead>
-          <tr>
-            <th>Asset</th>
-            <th>Amount</th>
-            <th>Leverage</th>
-            <th>Duration</th>
-            <th>Time Left</th>
-            <th>Profit/Loss</th>
-            <th>Action</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="tradeTable"></tbody>
-      </table>
-          </div>
- <style>
-    /* Spinner styling */
-    #loader {
-      display: none; /* hidden by default */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      z-index: 9999;
+<style>                     .form-container {
+                                background: #ffffff;
+                                border-radius: 12px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                                padding: 30px;
+                                margin: 20px;
+                                width: 100%;
+                                max-width: 500px;
+                              }
+                          
+                              h2 {
+                                margin-top: 0;
+                                color: #0b3559;
+                                font-size: 24px;
+                                border-bottom: 1px solid #e0e0e0;
+                                padding-bottom: 10px;
+                              }
+                          
+                              label {
+                                display: block;
+                                margin: 15px 0 5px;
+                                font-weight: 600;
+                                color: #333;
+                              }
+                          
+                              input[type="text"],
+                              input[type="number"] {
+                                width: 100%;
+                                padding: 12px;
+                                border-radius: 6px;
+                                border: 1px solid #ccc;
+                                background-color: #f9f9f9;
+                                font-size: 14px;
+                              }
+                          
+                              .slider-container {
+                                margin-top: 15px;
+                              }
+                          
+                              input[type="range"] {
+                                width: 100%;
+                              }
+                          
+                              #tradeAmountValue {
+                                display: inline-block;
+                                margin-top: 5px;
+                                font-weight: bold;
+                                color: #2a9d8f;
+                              }
+                          
+                              button {
+                                margin-top: 20px;
+                                width: 100%;
+                                padding: 12px;
+                                font-size: 16px;
+                                border: none;
+                                border-radius: 8px;
+                                background-color: #0b3559;
+                                color: white;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                              }
+                          
+                              button:hover {
+                                background-color: #005a9e;
+                              }
+                          
+                              .btn-primary {
+                                background-color: #008FFB;
+                              }
+                          
+                              .btn-primary:hover {
+                                background-color: #0071c5;
+                              }
+                          
+                              .result {
+                                margin-top: 20px;
+                                font-weight: bold;
+                                color: #0b7a75;
+                              }
+                            </style>
+                             <style>
+    .trading-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 380px;
+    }
+    .header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      margin-bottom: 15px;
     }
-  
-    .spinner {
-      border: 6px solid #f3f3f3; /* light gray */
-      border-top: 6px solid #3498db; /* blue */
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-  
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  
-    /* Profit/Loss styles */
-    .won {
-      color: #2ecc71;
+    .balance {
+      font-size: 16px;
       font-weight: bold;
+      color: #333;
     }
-    .lost {
-      color: #e74c3c;
+    .live {
+      font-size: 14px;
       font-weight: bold;
+      color: rgb(0, 255, 68);
+      animation: blink 1s infinite;
     }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+      color: #333;
+    }
+    select, input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .leverage-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 5px;
+    }
+    .leverage-buttons button {
+      flex: 1;
+      padding: 6px;
+      border: 1px solid #007bff;
+      border-radius: 6px;
+      background: #fff;
+      color: #007bff;
+      cursor: pointer;
+    }
+    .leverage-buttons button.active {
+      background: #007bff;
+      color: #fff;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .actions button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .buy { background: #28a745; color: #fff; }
+    .sell { background: #dc3545; color: #fff; }
   </style>
+
+      
+  <style>
   
-  <!-- Spinner element -->
-  <div id="loader">
-    <div class="spinner"></div>
+
+  
+    /* Content */
+    main.container {
+      /* margin-left: 250px; */
+      /* max-width: calc(100% - 250px); */
+      padding-top: 1rem;
+    }
+    @media (max-width: 991px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+      main.container {
+        margin-left: 0;
+        max-width: 100%;
+      }
+    }
+
+    /* Section Titles */
+    .section-title {
+      color: #1e293b;
+      font-weight: 600;
+      font-size: 1.2rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Balance Box */
+    .balance-box {
+      background: #ffffff;
+      /* border-left: 4px solid #10b981;
+      border-radius: 10px; */
+      padding: 1.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #1e293b;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+    }
+
+    /* Challenge Cards */
+    .card {
+      border: none;
+      border-radius: 16px;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #1e3a8a, #1e293b);
+      color: #f1f5f9;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+    .card::before {
+      content: "\f091"; /* trophy icon */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 10px;
+      bottom: -10px;
+      font-size: 4rem;
+      color: rgba(255, 255, 255, 0.08);
+      transform: rotate(-20deg);
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(30,58,138,0.5);
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+    }
+    .card h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #dbeafe;
+      margin: 0.2rem 0;
+    }
+
+    /* Buttons */
+    .card .btn-custom {
+      background: #10b981;
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .card .btn-custom:hover {
+      background: #059669;
+      box-shadow: 0 0 15px rgba(16,185,129,0.6);
+    }
+    .btn-warning {
+      background: #f59e0b !important;
+      border: none;
+      color: #fff !important;
+    }
+
+    /* Progress Bars */
+    .progress {
+      height: 10px;
+      border-radius: 6px;
+      background: #e5e7eb;
+    }
+    .progress-bar {
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    /* Modal */
+    .modal-content {
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+  </style>        
+
+<body>
+
+<!-- Main Co ntent -->
+  <main class="container">
+    <!-- Challenge Balance -->
+   <!-- Balance & Actions Header -->
+<div class="d-flex justify-content-between align-items-center p-3 bg-light rounded shadow-sm mb-3">
+
+  <!-- Balance Display -->
+  <div id="challengeBalanceBox" class="fw-bold text-primary fs-5">
+    <i class="fa-solid fa-coins me-2 text-warning"></i>
+    Challenge Balance: <span id="challengeBalanceAmount">$0</span>
   </div>
- 
-                        <!-- <a href="https://Stoxphere.com/user-account2/invoice" class="btn round btn-primary btn-block btn-glow">View Payments Invoice </a> -->
 
-              
-                        <script src="./ongoing_files/twk-main.js.download" charset="UTF-8" crossorigin="*"></script><script src="./ongoing_files/twk-vendor.js.download" charset="UTF-8" crossorigin="*"></script><script src="./ongoing_files/twk-chunk-vendors.js.download" charset="UTF-8" crossorigin="*"></script><script src="./ongoing_files/twk-chunk-common.js.download" charset="UTF-8" crossorigin="*"></script><script src="./ongoing_files/twk-runtime.js.download" charset="UTF-8" crossorigin="*"></script><script src="./ongoing_files/twk-app.js.download" charset="UTF-8" crossorigin="*"></script><script async="" src="./ongoing_files/default" charset="UTF-8" crossorigin="*"></script><script type="text/javascript" charset="utf-8" async="" src="./ongoing_files/loader.js.download"></script>
-                        <!-- <script>
+  <!-- Action Buttons -->
+  <div class="d-flex gap-2">
+    <!-- Fund Button -->
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#fundModal">
+      <i class="fa-solid fa-wallet me-1"></i> Fund
+    </button>
 
-                            // Array of numbers to display
-                            const numbers = ["Apple (AAPL) Stocks", "Google (GOOGL) Stocks", "Microsoft (MSFT) Stocks", "NVIDIA (NVDA) Stocks", "TESLA (TSLA) Stocks", "AMAZON (AMZN) Stocks", "META (META) Stocks", "NETFLIX (NFLX) Stocks", "AMD (AMD) Stocks", "ALPHABET INC. (GOOG) Stocks"];
+    <!-- Withdraw Button -->
+    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#withdrawModal">
+      <i class="fa-solid fa-money-bill-wave me-1"></i> Withdraw
+    </button>
+  </div>
 
-                            // Function to display a random number at a random time
-                            function displayRandomNumber() {
-                            // Select a random number from the array
-                            const randomIndex = Math.floor(Math.random() * numbers.length);
-                            const randomNumber = numbers[randomIndex];
-
-                            // Display the number (console or DOM)
-                            document.getElementById("displayStock").innerHTML = randomNumber;
-
-                            // Display the number (console or DOM) 
-                            //   console.log("Random Number:", randomNumber);
-
-                            // Set a random time interval for the next display (1 to 5 seconds)
-                            const randomTime = Math.random() * 3600000;
-
-                            // Schedule the next display
-                            setTimeout(displayRandomNumber, randomTime);
-                            }
-
-                            // Start the process
-                            displayRandomNumber();
-
-                        </script> -->
-
- 
-
-                                              
-
-                        
+</div>
 
 
-                    </div>
-                    <!-- end container-fluid -->
-                </div>
-                <!-- end app-main -->
-            </div>
-            <!-- end app-container -->
-           
-             <script>
-  const BASE_URL = "http://localhost:8080"; // backend
-  const tradeTable = document.getElementById("tradeTable");
-  const loader = document.getElementById("loader");
 
-  // Keep interval references so we can clear them on re-render
-  const timers = new Map();
+    <!-- Available Challenges -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-list"></i> Available Challenges</h2>
+      <div id="challengesList" class="row g-4"></div>
+    </section>
 
-  // ------------------ Helpers ------------------
-  function parseDuration(duration) {
-    // returns seconds
-    if (duration === null || duration === undefined) return 0;
-    if (typeof duration === "number") return duration * 60; // treat number as minutes
-    if (!isNaN(duration)) return Number(duration) * 60;     // "15" -> 15 minutes
-    const match = /^(\d+)([smhd])?$/i.exec(String(duration).trim());
-    if (!match) return 0;
-    const value = parseInt(match[1], 10);
-    const unit = (match[2] || "m").toLowerCase();
-    switch (unit) {
-      case "s": return value;
-      case "m": return value * 60;
-      case "h": return value * 3600;
-      case "d": return value * 86400;
-      default: return 0;
+    <!-- My Active Challenges -->
+    <section class="mt-5">
+      <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> My Challenges</h2>
+      <div id="myChallenges" class="row g-4"></div>
+    </section>
+  </main>
+<!-- Fund Modal -->
+<div class="modal fade" id="fundModal" tabindex="-1" aria-labelledby="fundModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-3">
+      <!-- Header -->
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="fundModalLabel">
+          <i class="fa-solid fa-wallet me-2"></i> Fund Challenge Balance
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <!-- Amount -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Amount</label>
+          <input type="number" id="fundAmount" class="form-control" placeholder="Enter amount" min="1" required>
+        </div>
+
+        <!-- Network -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Select Network</label>
+          <select id="networkSelect" class="form-select" onchange="showWalletAddress()">
+            <option value="">-- Choose Network --</option>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="USDT-TRC20">Tether (USDT - TRC20)</option>
+            <option value="USDT-ERC20">Tether (USDT - ERC20)</option>
+          </select>
+        </div>
+
+        <!-- Wallet Address (hidden by default) -->
+        <div id="walletBox" class="mb-3" style="display: none;">
+          <label class="form-label fw-semibold">Wallet Address</label>
+          <div class="input-group">
+            <input type="text" id="walletAddress" class="form-control" readonly>
+            <button class="btn btn-outline-secondary" type="button" onclick="copyWallet()">
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          <i class="fa-solid fa-xmark"></i> Cancel
+        </button>
+        <button type="button" class="btn btn-success" onclick="fundBalance()">
+          <i class="fa-solid fa-circle-check"></i> Fund
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Dummy wallet addresses
+  const wallets = {
+    BTC: "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+    ETH: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    "USDT-TRC20": "TAUNkD8PH8f9Zk9R9VPhX4wff5k93N1t7j",
+    "USDT-ERC20": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+  };
+
+  function showWalletAddress() {
+    const network = document.getElementById("networkSelect").value;
+    const walletBox = document.getElementById("walletBox");
+    const walletInput = document.getElementById("walletAddress");
+
+    if (network && wallets[network]) {
+      walletBox.style.display = "block";
+      walletInput.value = wallets[network];
+    } else {
+      walletBox.style.display = "none";
+      walletInput.value = "";
     }
   }
 
-  function formatTime(totalSeconds) {
-    const sec = Math.max(0, Math.floor(totalSeconds));
-    const h = Math.floor(sec / 3600);
-    const m = Math.floor((sec % 3600) / 60);
-    const s = sec % 60;
-    const pad = (n) => String(n).padStart(2, "0");
-    return `${pad(h)}:${pad(m)}:${pad(s)}`;
+  function copyWallet() {
+    const walletInput = document.getElementById("walletAddress");
+    walletInput.select();
+    walletInput.setSelectionRange(0, 99999); // for mobile
+    document.execCommand("copy");
+    alert("Wallet address copied: " + walletInput.value);
   }
+</script>
 
-  // Fetch a single trade by id
-  async function fetchTradeFromBackend(tradeId) {
-    try {
-      const response = await $.ajax({
-        type: "GET",
-        url: `${BASE_URL}/transactions/trades/${tradeId}`,
-        dataType: "json",
-        timeout: 30000,
+  <!-- Withdraw Modal -->
+<div class="modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-3">
+      <!-- Header -->
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title" id="withdrawModalLabel">
+          <i class="fa-solid fa-money-bill-wave me-2"></i> Withdraw Balance
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="withdrawAmount" class="form-label fw-semibold">Amount</label>
+          <input type="number" id="withdrawAmount" class="form-control" placeholder="Enter amount" min="1" required>
+          <small class="text-muted">Enter the amount you want to withdraw from your balance.</small>
+        </div>
+
+        <!-- Fee info -->
+        <div class="alert alert-light border mt-3 mb-0 text-center">
+          <i class="fa-solid fa-percent text-warning"></i> Withdrawal Fee: <strong>5%</strong>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          <i class="fa-solid fa-xmark"></i> Cancel
+        </button>
+        <button type="button" class="btn btn-warning" onclick="withdrawBalance()">
+          <i class="fa-solid fa-paper-plane"></i> Confirm Withdraw
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+                                
+  <script>
+    async function fetchUserInfo() {
+                               var parsedData = localStorage.getItem('user')
+                               var userFromLS = JSON.parse((parsedData))
+                   
+                               console.log(userFromLS);
+                   
+                               const response = await $.ajax({
+                                   type: "GET",
+                                   url: `http://localhost:8080/users/${userFromLS.email}`,
+                                   dataType: "json",
+                                   timeout: 30000,
+                                   success: async function (data) {
+                                       Object.assign(currentUser, data.data)
+                                       await localStorage.setItem("user", JSON.stringify(data.data))
+                                   },
+                                   error: function () {
+                                       alert(error)
+                                   }
+                               });
+                   
+                               return response.data;
+                           }
+                   
+                           $(document).ready(async function () {
+
+                            
+
+                            })
+ 
+    // ✅ Simulate localStorage user
+    if (!localStorage.getItem("user")) {
+      const demoUser = {
+        id: "user123",
+        firstName: "Test",
+        challengeBalance: 5000,
+      };
+      localStorage.setItem("user", JSON.stringify(demoUser));
+    }
+
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    const challenges = [
+      {
+        id: 1,
+        title: "Challenge 1",
+        entryFee: 1000,
+        duration: 30,
+        expectedProfitRate: "80%",
+        minProfit: 10000,
+        reward: "x2 (double your profit)",
+        rewardValue: 20000
+      },
+      {
+        id: 2,
+        title: "Challenge 2",
+        entryFee: 2000,
+        duration: 45,
+        expectedProfitRate: "60%",
+        minProfit: 1500,
+        reward: "$12,000 fixed reward",
+        rewardValue: 12000
+      }
+    ];
+
+    let myChallenges = [];
+
+    function renderBalance() {
+      document.getElementById("challengeBalanceBox").innerText =
+        `Challenge Balance: $${user.challengeBalance}`;
+    }
+
+    function renderChallenges() {
+      const challengesList = document.getElementById("challengesList");
+      challengesList.innerHTML = "";
+
+      challenges.forEach(c => {
+        const div = document.createElement("div");
+        div.className = "col-12 col-md-6 col-lg-4";
+        div.innerHTML = `
+          <div class="card p-4 h-100">
+            <h4>${c.title}</h4>
+            <p><strong>Entry Fee:</strong> $${c.entryFee}</p>
+            <p><strong>Duration:</strong> ${c.duration} days</p>
+            <p><strong>Expected Win Rate:</strong> ${c.expectedProfitRate}</p>
+            <p><strong>Minimum Profit:</strong> $${c.minProfit}</p>
+            <p><strong>Reward:</strong> ${c.reward}</p>
+            <button class="btn btn-custom mt-2" onclick="joinChallenge(${c.id})">
+              <i class="fa-solid fa-door-open"></i> Join Challenge
+            </button>
+          </div>
+        `;
+        challengesList.appendChild(div);
       });
-      if (response && response.success && response.trade) return response.trade;
-      console.error("No trade object returned:", response);
-      return null;
-    } catch (err) {
-      console.error("Error fetching trade:", err);
-      return null;
     }
+
+    function renderMyChallenges() {
+      const myList = document.getElementById("myChallenges");
+      myList.innerHTML = "";
+var user=JSON.parse(localStorage.getItem("user"))
+      user.challenges.forEach(mc => {
+        const progressPercent = Math.min(
+          (user.challengeProfit / eval(mc.minProfit)) * 100,
+          100
+        ).toFixed(1);
+console.log(mc._id);
+var enc=encodeURIComponent(mc._id)
+
+        const div = document.createElement("div");
+        div.className = "col-12 col-md-6 col-lg-4";
+        div.innerHTML = `
+          <div class="card p-4 h-100">
+            <h4>${mc.title}</h4>
+            <p><strong>Progress:</strong> $${user.challengeProfit} / $${eval(mc.minProfit)}</p>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-success" role="progressbar" style="width: ${progressPercent}%">
+                ${progressPercent}%
+              </div>
+            </div>
+            <p><strong>Days Left:</strong> ${mc.daysLeft}</p>
+           <button 
+  class="btn btn-success mt-2" 
+  onclick="claimReward('${mc._id}')"
+  ${user.challengeProfit < mc.minProfit ? "disabled" : ""}>
+  <i class="fa-solid fa-trophy"></i> Claim Reward
+</button>
+
+          </div>
+        `;
+        myList.appendChild(div);
+      });
+    }
+
+   function joinChallenge(id) {
+  const challenge = challenges.find(c => c.id === id);
+  if (!challenge) return;
+
+  // Check challenge balance locally
+  if (user.challengeBalance < challenge.entryFee) {
+    Swal.fire("Insufficient Balance", "Please fund your challenge balance.", "error");
+    return;
   }
 
-  // Update row UI with final result
-  function updateResultUI(trade, profitLossEl, actionEl, statusEl) {
-    if (!trade) {
-      profitLossEl.textContent = "--";
-      actionEl.textContent = "Error";
-      statusEl.textContent = "FAILED";
+  // Deduct entry fee locally
+  user.challengeBalance -= challenge.entryFee;
+  localStorage.setItem("user", JSON.stringify(user));
+  renderBalance();
+
+  // Add challenge to local active list
+  const joinedChallenge = {
+    ...challenge,
+    profit: 0,
+    daysLeft: challenge.duration,
+    joinedAt: new Date(),
+    rewardClaimed: false
+  };
+
+  myChallenges.push(joinedChallenge);
+  console.log(myChallenges);
+  
+
+  // ✅ Send to backend
+  $.ajax({
+    url: `http://localhost:8080/transactions/users/${user._id}/challenges/join`, 
+    type: "POST",
+    data: JSON.stringify({ challenge: joinedChallenge }),
+    contentType: "application/json",
+    success: function (res) {
+      // Update user object with response from server
+      user = res.user;
+      localStorage.setItem("user", JSON.stringify(user));
+
+      Swal.fire("Joined!", `You successfully joined ${challenge.title}`, "success");
+      renderMyChallenges();
+    },
+    error: function (xhr) {
+        console.log(xhr.responseJSON?.error);
+        
+      Swal.fire("Error", xhr.responseJSON?.error || "Something went wrong", "error");
+    }
+  });
+}
+
+
+  async function claimReward(id) {
+  try {
+    const user = JSON.parse(localStorage.getItem("user")) || {};
+    if (!user._id) {
+      return Swal.fire("Error", "User not found. Please log in again.", "error");
+    }
+
+    // Call backend API
+    const response = await $.ajax({
+      type: "POST",
+      url: `http://localhost:8080/transactions/users/${user._id}/challenges/${id}/claim`,
+      contentType: "application/json",
+    });
+
+    // Success 🎉
+    Swal.fire("Reward Claimed!", response.message, "success");
+
+    // Update user balance locally
+    user.challengeBalance = response.balance;
+
+    // 🔹 Remove the claimed challenge from local copy
+    user.challenges = (user.challenges || []).filter(c => c._id !== id);
+
+    // Save back to localStorage
+    localStorage.setItem("user", JSON.stringify(user));
+
+    // Optionally refresh UI (if you have a renderer)
+    if (typeof renderMyChallenges === "function") {
+      renderMyChallenges();
+    }
+
+  } catch (err) {
+    console.error("Claim reward failed:", err);
+    Swal.fire(
+      "Error",
+      err.responseJSON?.error || "Failed to claim reward. Try again later.",
+      "error"
+    );
+  }
+}
+
+
+
+   async function fundBalance() {
+    const amount = parseFloat(document.getElementById("fundAmount").value);
+    const network = document.getElementById("networkSelect").value;
+    const walletAddress = document.getElementById("walletAddress").value;
+
+    if (isNaN(amount) || amount <= 0) {
+      Swal.fire("Invalid Amount", "Please enter a valid funding amount.", "error");
       return;
     }
 
-    const profit = Number(trade.profit || 0);
-    const amount = Number(trade.tradeAmount || 0);
-
-    if (profit > 0) {
-      profitLossEl.textContent = `+$${profit}`;
-      profitLossEl.className = "won";
-      actionEl.textContent = "Won";
-      actionEl.className = "won";
-    } else {
-      profitLossEl.textContent = `-$${amount}`;
-      profitLossEl.className = "lost";
-      actionEl.textContent = "Lost";
-      actionEl.className = "lost";
+    if (!network) {
+      Swal.fire("No Network", "Please select a network.", "error");
+      return;
     }
 
-    statusEl.textContent = "COMPLETED";
-  }
+    // get user from localStorage
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      Swal.fire("Error", "User not found in local storage.", "error");
+      return;
+    }
 
-  // ------------------ Render / Countdown ------------------
-  function renderTrades(trades) {
-    // clear existing timers to avoid duplicates when re-rendering
-    timers.forEach((t) => clearInterval(t));
-    timers.clear();
+    // build deposit payload
+    const payload = {
+      method: network,
+      amount: amount,
+      from: user.firstName + " "+ user.lastName,       // ✅ the wallet user should pay to
+      to: user.email || user._id, // ✅ recipient (optional based on your schema)
+      timestamp: new Date().toISOString()
+    };
 
-    tradeTable.innerHTML = ""; // clear old rows
-
-    trades.forEach((trade) => {
-      const id = trade._id; // use trade._id so indexes don't shift
-      const row = document.createElement("tr");
-
-      row.innerHTML = `
-        <td>${trade.assetName ?? "-"}</td>
-        <td>$${Number(trade.tradeAmount || 0)}</td>
-        <td>${trade.leverage ?? "-"}</td>
-        <td>${trade.duration ?? "-"}</td>
-        <td id="countdown-${id}">--:--:--</td>
-        <td id="profitLoss-${id}">-</td>
-        <td id="action-${id}">${trade.command === "true" ? "Running" : "Pending"}</td>
-        <td id="status-${id}">${trade.status ?? "-"}</td>
-      `;
-
-      tradeTable.appendChild(row);
-
-      const countdownEl = document.getElementById(`countdown-${id}`);
-      const profitLossEl = document.getElementById(`profitLoss-${id}`);
-      const actionEl = document.getElementById(`action-${id}`);
-      const statusEl = document.getElementById(`status-${id}`);
-
-      // If already completed — show stored result immediately
-      if ((trade.status || "").toUpperCase() === "COMPLETED") {
-        countdownEl.textContent = "00:00:00";
-        updateResultUI(trade, profitLossEl, actionEl, statusEl);
-        return;
-      }
-
-      // Treat both ACTIVE and RUNNING (and explicit command true) as active states
-      const statusUpper = (trade.status || "").toUpperCase();
-      const isActive = statusUpper === "ACTIVE" || statusUpper === "RUNNING" || trade.command === "true";
-
-      if (!isActive) {
-        countdownEl.textContent = "--:--:--";
-        return; // pending or declined; no countdown
-      }
-
-      // Ensure startTime is valid — if missing, show "Waiting..."
-      const startMs = trade.startTime ? Date.parse(trade.startTime) : NaN;
-      if (!startMs || Number.isNaN(startMs)) {
-        countdownEl.textContent = "Waiting…";
-        statusEl.textContent = trade.status || "PENDING";
-        return;
-      }
-
-      // parse duration in seconds
-      const durSec = parseDuration(trade.duration);
-      if (!durSec) {
-        countdownEl.textContent = "—";
-        return;
-      }
-
-      const endMs = startMs + durSec * 1000;
-
-      // Clear any existing timer for this trade (defensive)
-      if (timers.has(id)) {
-        clearInterval(timers.get(id));
-        timers.delete(id);
-      }
-
-      // tick function updates UI each second
-      const tick = async () => {
-        const now = Date.now();
-        const left = Math.max(0, Math.floor((endMs - now) / 1000));
-        countdownEl.textContent = formatTime(left);
-
-        // mark active UI
-        actionEl.textContent = trade.command === "true" ? "Running" : actionEl.textContent;
-        statusEl.textContent = statusUpper || "ACTIVE";
-
-        if (left <= 0) {
-          // stop timer and fetch final trade result
-          if (timers.has(id)) {
-            clearInterval(timers.get(id));
-            timers.delete(id);
-          }
-          countdownEl.textContent = "00:00:00";
-          statusEl.textContent = "Fetching Result...";
-
-          try {
-            loader.style.display = "flex";
-            const refreshed = await fetchTradeFromBackend(id);
-            if (refreshed) {
-              updateResultUI(refreshed, profitLossEl, actionEl, statusEl);
-            } else {
-              statusEl.textContent = "Error fetching result";
-            }
-          } catch (err) {
-            console.error("Error fetching final trade result:", err);
-            statusEl.textContent = "Error fetching result";
-          } finally {
-            loader.style.display = "none";
-          }
-        }
-      };
-
-      // initial tick and start interval
-      tick();
-      const intervalId = setInterval(tick, 1000);
-      timers.set(id, intervalId);
-    });
-  }
-
-  // ------------------ Load trades ------------------
-  async function loadTrades() {
     try {
-      loader.style.display = "flex";
-      const parsedData = localStorage.getItem("user");
-      if (!parsedData) {
-        console.warn("No user found in localStorage");
-        loader.style.display = "none";
-        return [];
-      }
-      const userFromLS = JSON.parse(parsedData);
-
-      const response = await $.ajax({
-        type: "GET",
-        url: `${BASE_URL}/users/${userFromLS.email}`,
-        dataType: "json",
-        timeout: 30000,
+      // send to backend
+      const res = await fetch(`http://localhost:8080/transactions/${user._id}/deposit/challenge`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
       });
 
-      if (!response || !response.data) {
-        throw new Error("Invalid response from server");
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        Swal.fire("Success!", `Deposit request of $${amount} submitted. Pending confirmation.`, "success");
+        document.getElementById("fundAmount").value = "";
+        document.getElementById("networkSelect").value = "";
+        document.getElementById("walletBox").style.display = "none";
+
+        bootstrap.Modal.getInstance(document.getElementById("fundModal")).hide();
+
+        // update UI balances locally (optional)
+        user.challengeBalance += amount;
+        localStorage.setItem("user", JSON.stringify(user));
+        renderBalance();
+      } else {
+        Swal.fire("Error", data.message || "Deposit failed", "error");
+      }
+    } catch (err) {
+      console.error(err);
+      Swal.fire("Error", "Something went wrong. Try again later.", "error");
+    }
+  }
+   async function withdrawBalance() {
+    const amount = parseFloat(document.getElementById("withdrawAmount").value);
+    if (isNaN(amount) || amount <= 0) {
+      Swal.fire("Invalid Amount", "Please enter a valid withdrawal amount.", "error");
+      return;
+    }
+
+    // ✅ Check if user has enough challenge balance
+    if (amount > user.challengeBalance) {
+      Swal.fire("Insufficient Balance", "You do not have enough funds in your challenge balance.", "error");
+      return;
+    }
+
+    // ✅ Check if user has enough main balance for withdrawal fee (5%)
+    const fee = amount * 0.05;
+    if (user.balance < fee) {
+      Swal.fire("Insufficient Fee", "You need at least 5% of the withdrawal amount in your main balance to cover fees.", "error");
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:8080/transactions/${user._id}/withdrawal/challenge`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          method: "USDT",          // replace with selected option
+          address: "user_wallet",  // replace with actual wallet input
+          amount: amount,
+          from: user.email,
+          account: user.firstName + " " + user.lastName,
+          to: "Admin",
+          timestamp: Date.now()
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        Swal.fire("Error", result.message || "Withdrawal failed", "error");
+        return;
       }
 
-      localStorage.setItem("user", JSON.stringify(response.data));
-      const trades = response.data.planHistory || [];
-      renderTrades(trades);
-      return trades;
-    } catch (error) {
-      console.error("Error loading trades:", error);
-      alert("Failed to load trades.");
-      return [];
-    } finally {
-      loader.style.display = "none";
+      // ✅ Update balances locally
+      user.challengeBalance -= amount;
+      user.balance -= fee;
+      localStorage.setItem("user", JSON.stringify(user));
+      renderBalance();
+
+      Swal.fire("Conversion Successful!", `You withdrew $${amount}. Fee: $${fee.toFixed(2)}`, "success");
+
+      document.getElementById("withdrawAmount").value = "";
+      bootstrap.Modal.getInstance(document.getElementById("withdrawModal")).hide();
+    } catch (err) {
+      console.error(err);
+      Swal.fire("Error", "Server error while processing withdrawal.", "error");
     }
   }
 
-  // initial load
-  loadTrades();
+    // ✅ Initialize
+    renderBalance();
+    renderChallenges();
+    renderMyChallenges();
+  </script>
+</body>
 
-  // optional: auto-refresh every 60 seconds to keep UI in sync with backend
-  setInterval(() => {
-    loadTrades();
-  }, 60 * 1000);
-</script>
 
- <!-- begin footer -->
- 
- <!-- Smartsupp Live Chat script -->
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '42d21b034e4e729791ff0f7d04816123db4f8bc6';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+  <!-- Navbar -->
+  
 
+  </script>               
  <footer class="footer">
                 <div class="row">
                     <div class="col-12 col-sm-6 text-center text-sm-left">
@@ -1874,8 +2317,10 @@ window.smartsupp||(function(d) {
         <!-- end app-wrap -->
     </div>
     <!-- end app -->
+     
 
-<!-- plugins -->
+
+
 <script src="./ongoing_files/vendors.js.download"></script>
 
 <script src="./test_files/app.js.download"></script>
@@ -1894,5 +2339,27 @@ window.smartsupp||(function(d) {
 
 
  
- 
+ <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M-1 58.42666563796996L-1 58.42666563796996C-1 58.42666563796996 4.851336043813954 58.42666563796996 4.851336043813954 58.42666563796996C4.851336043813954 58.42666563796996 9.702672087627908 58.42666563796996 9.702672087627908 58.42666563796996C9.702672087627908 58.42666563796996 14.554008131441861 58.42666563796996 14.554008131441861 58.42666563796996C14.554008131441861 58.42666563796996 19.405344175255816 58.42666563796996 19.405344175255816 58.42666563796996C19.405344175255816 58.42666563796996 24.256680219069768 58.42666563796996 24.256680219069768 58.42666563796996C24.256680219069768 58.42666563796996 29.108016262883723 58.42666563796996 29.108016262883723 58.42666563796996C29.108016262883723 58.42666563796996 33.959352306697674 58.42666563796996 33.959352306697674 58.42666563796996C33.959352306697674 58.42666563796996 38.81068835051163 58.42666563796996 38.81068835051163 58.42666563796996C38.81068835051163 58.42666563796996 43.662024394325584 58.42666563796996 43.662024394325584 58.42666563796996C43.662024394325584 58.42666563796996 48.513360438139536 58.42666563796996 48.513360438139536 58.42666563796996C48.513360438139536 58.42666563796996 53.364696481953494 58.42666563796996 53.364696481953494 58.42666563796996C53.364696481953494 58.42666563796996 58.216032525767446 58.42666563796996 58.216032525767446 58.42666563796996C58.216032525767446 58.42666563796996 63.067368569581404 58.42666563796996 63.067368569581404 58.42666563796996C63.067368569581404 58.42666563796996 67.91870461339535 58.42666563796996 67.91870461339535 58.42666563796996C67.91870461339535 58.42666563796996 72.77004065720931 58.42666563796996 72.77004065720931 58.42666563796996C72.77004065720931 58.42666563796996 77.62137670102327 58.42666563796996 77.62137670102327 58.42666563796996C77.62137670102327 58.42666563796996 82.47271274483721 58.42666563796996 82.47271274483721 58.42666563796996C82.47271274483721 58.42666563796996 87.32404878865117 58.42666563796996 87.32404878865117 58.42666563796996C87.32404878865117 58.42666563796996 92.17538483246513 58.42666563796996 92.17538483246513 58.42666563796996C92.17538483246513 58.42666563796996 97.02672087627907 58.42666563796996 97.02672087627907 58.42666563796996C97.02672087627907 58.42666563796996 101.87805692009303 58.42666563796996 101.87805692009303 58.42666563796996C101.87805692009303 58.42666563796996 106.72939296390699 58.42666563796996 106.72939296390699 58.42666563796996C106.72939296390699 58.42666563796996 111.58072900772093 58.42666563796996 111.58072900772093 58.42666563796996C111.58072900772093 58.42666563796996 116.43206505153489 58.42666563796996 116.43206505153489 58.42666563796996C116.43206505153489 58.42666563796996 121.28340109534885 58.42666563796996 121.28340109534885 58.42666563796996C121.28340109534885 58.42666563796996 126.13473713916281 58.42666563796996 126.13473713916281 58.42666563796996C126.13473713916281 58.42666563796996 130.98607318297675 58.42666563796996 130.98607318297675 58.42666563796996C130.98607318297675 58.42666563796996 135.8374092267907 58.42666563796996 135.8374092267907 58.42666563796996C135.8374092267907 58.42666563796996 140.68874527060467 58.42666563796996 140.68874527060467 58.42666563796996C140.68874527060467 58.42666563796996 145.54008131441861 58.42666563796996 145.54008131441861 58.42666563796996C145.54008131441861 58.42666563796996 150.39141735823256 58.42666563796996 150.39141735823256 58.42666563796996C150.39141735823256 58.42666563796996 155.24275340204653 58.42666563796996 155.24275340204653 58.42666563796996C155.24275340204653 58.42666563796996 160.09408944586048 58.42666563796996 160.09408944586048 58.42666563796996C160.09408944586048 58.42666563796996 164.94542548967442 58.42666563796996 164.94542548967442 58.42666563796996C164.94542548967442 58.42666563796996 169.7967615334884 58.42666563796996 169.7967615334884 58.42666563796996C169.7967615334884 58.42666563796996 174.64809757730234 58.42666563796996 174.64809757730234 58.42666563796996C174.64809757730234 58.42666563796996 179.49943362111628 58.42666563796996 179.49943362111628 58.42666563796996C179.49943362111628 58.42666563796996 184.35076966493025 58.42666563796996 184.35076966493025 58.42666563796996C184.35076966493025 58.42666563796996 189.2021057087442 58.42666563796996 189.2021057087442 58.42666563796996C189.2021057087442 58.42666563796996 194.05344175255814 58.42666563796996 194.05344175255814 58.42666563796996C194.05344175255814 58.42666563796996 198.90477779637212 58.42666563796996 198.90477779637212 58.42666563796996C198.90477779637212 58.42666563796996 203.75611384018606 58.42666563796996 203.75611384018606 58.42666563796996C203.75611384018606 58.42666563796996 208.607449884 58.42666563796996 208.607449884 58.42666563796996C208.607449884 58.42666563796996 213.45878592781398 58.42666563796996 213.45878592781398 58.42666563796996C213.45878592781398 58.42666563796996 218.31012197162792 58.42666563796996 218.31012197162792 58.42666563796996C218.31012197162792 58.42666563796996 223.16145801544187 58.42666563796996 223.16145801544187 58.42666563796996C223.16145801544187 58.42666563796996 228.01279405925584 58.42666563796996 228.01279405925584 58.42666563796996C228.01279405925584 58.42666563796996 232.86413010306978 58.42666563796996 232.86413010306978 58.42666563796996C232.86413010306978 58.42666563796996 237.71546614688373 58.42666563796996 237.71546614688373 58.42666563796996C237.71546614688373 58.42666563796996 242.5668021906977 58.42666563796996 242.5668021906977 58.42666563796996C242.5668021906977 58.42666563796996 247.41813823451164 58.42666563796996 247.41813823451164 58.42666563796996C247.41813823451164 58.42666563796996 252.26947427832562 58.42666563796996 252.26947427832562 58.42666563796996C252.26947427832562 58.42666563796996 257.12081032213956 58.42666563796996 257.12081032213956 58.42666563796996C257.12081032213956 58.42666563796996 261.9721463659535 58.42666563796996 261.9721463659535 58.42666563796996C261.9721463659535 58.42666563796996 266.82348240976745 58.42666563796996 266.82348240976745 58.42666563796996C266.82348240976745 58.42666563796996 271.6748184535814 58.42666563796996 271.6748184535814 58.42666563796996C271.6748184535814 58.42666563796996 276.5261544973954 58.42666563796996 276.5261544973954 58.42666563796996C276.5261544973954 58.42666563796996 281.37749054120934 58.42666563796996 281.37749054120934 58.42666563796996C281.37749054120934 58.42666563796996 286.2288265850233 58.42666563796996 286.2288265850233 58.42666563796996C286.2288265850233 58.42666563796996 291.08016262883723 58.42666563796996 291.08016262883723 58.42666563796996C291.08016262883723 58.42666563796996 295.9314986726512 58.42666563796996 295.9314986726512 58.42666563796996C295.9314986726512 58.42666563796996 300.7828347164651 58.42666563796996 300.7828347164651 58.42666563796996C300.7828347164651 58.42666563796996 305.6341707602791 58.42666563796996 305.6341707602791 58.42666563796996C305.6341707602791 58.42666563796996 310.48550680409306 58.42666563796996 310.48550680409306 58.42666563796996C310.48550680409306 58.42666563796996 315.336842847907 58.42666563796996 315.336842847907 58.42666563796996C315.336842847907 58.42666563796996 320.18817889172095 58.42666563796996 320.18817889172095 58.42666563796996C320.18817889172095 58.42666563796996 325.0395149355349 58.42666563796996 325.0395149355349 58.42666563796996C325.0395149355349 58.42666563796996 329.89085097934884 58.42666563796996 329.89085097934884 58.42666563796996C329.89085097934884 58.42666563796996 334.74218702316284 58.42666563796996 334.74218702316284 58.42666563796996C334.74218702316284 58.42666563796996 339.5935230669768 58.42666563796996 339.5935230669768 58.42666563796996C339.5935230669768 58.42666563796996 344.44485911079073 58.42666563796996 344.44485911079073 58.42666563796996C344.44485911079073 58.42666563796996 349.2961951546047 58.42666563796996 349.2961951546047 58.42666563796996C349.2961951546047 58.42666563796996 354.1475311984186 58.42666563796996 354.1475311984186 58.42666563796996C354.1475311984186 58.42666563796996 358.99886724223256 58.42666563796996 358.99886724223256 58.42666563796996C358.99886724223256 58.42666563796996 363.85020328604656 58.42666563796996 363.85020328604656 58.42666563796996C363.85020328604656 58.42666563796996 368.7015393298605 58.42666563796996 368.7015393298605 58.42666563796996C368.7015393298605 58.42666563796996 373.55287537367445 58.42666563796996 373.55287537367445 58.42666563796996C373.55287537367445 58.42666563796996 378.4042114174884 58.42666563796996 378.4042114174884 58.42666563796996C378.4042114174884 58.42666563796996 383.25554746130234 58.42666563796996 383.25554746130234 58.42666563796996C383.25554746130234 58.42666563796996 388.1068835051163 58.42666563796996 388.1068835051163 58.42666563796996C388.1068835051163 58.42666563796996 392.9582195489303 58.42666563796996 392.9582195489303 58.42666563796996C392.9582195489303 58.42666563796996 397.80955559274423 58.42666563796996 397.80955559274423 58.42666563796996C397.80955559274423 58.42666563796996 402.6608916365582 58.42666563796996 402.6608916365582 58.42666563796996C402.6608916365582 58.42666563796996 407.5122276803721 58.42666563796996 407.5122276803721 58.42666563796996C407.5122276803721 58.42666563796996 412.36356372418606 58.42666563796996 412.36356372418606 58.42666563796996C412.36356372418606 58.42666563796996 417.214899768 58.42666563796996 417.214899768 58.42666563796996C417.214899768 58.42666563796996 422.066235811814 58.42666563796996 422.066235811814 58.42666563796996C422.066235811814 58.42666563796996 426.91757185562795 58.42666563796996 426.91757185562795 58.42666563796996C426.91757185562795 58.42666563796996 431.7689078994419 58.42666563796996 431.7689078994419 58.42666563796996C431.7689078994419 58.42666563796996 436.62024394325584 58.42666563796996 436.62024394325584 58.42666563796996C436.62024394325584 58.42666563796996 441.4715799870698 58.42666563796996 441.4715799870698 58.42666563796996C441.4715799870698 58.42666563796996 446.32291603088373 58.42666563796996 446.32291603088373 58.42666563796996C446.32291603088373 58.42666563796996 451.17425207469773 58.42666563796996 451.17425207469773 58.42666563796996C451.17425207469773 58.42666563796996 456.0255881185117 58.42666563796996 456.0255881185117 58.42666563796996C456.0255881185117 58.42666563796996 460.8769241623256 58.42666563796996 460.8769241623256 58.42666563796996C460.8769241623256 58.42666563796996 465.72826020613957 58.42666563796996 465.72826020613957 58.42666563796996C465.72826020613957 58.42666563796996 470.5795962499535 58.42666563796996 470.5795962499535 58.42666563796996C470.5795962499535 58.42666563796996 475.43093229376746 58.42666563796996 475.43093229376746 58.42666563796996C475.43093229376746 58.42666563796996 480.28226833758146 58.42666563796996 480.28226833758146 58.42666563796996C480.28226833758146 58.42666563796996 485.1336043813954 58.42666563796996 485.1336043813954 58.42666563796996C485.1336043813954 58.42666563796996 489.98494042520934 58.42666563796996 489.98494042520934 58.42666563796996C489.98494042520934 58.42666563796996 494.8362764690233 58.42666563796996 494.8362764690233 58.42666563796996C494.8362764690233 58.42666563796996 499.68761251283723 58.42666563796996 499.68761251283723 58.42666563796996C499.68761251283723 58.42666563796996 504.53894855665123 58.42666563796996 504.53894855665123 58.42666563796996C504.53894855665123 58.42666563796996 509.3902846004652 58.42666563796996 509.3902846004652 58.42666563796996C509.3902846004652 58.42666563796996 514.2416206442791 58.42666563796996 514.2416206442791 58.42666563796996C514.2416206442791 58.42666563796996 519.0929566880931 58.42666563796996 519.0929566880931 58.42666563796996C519.0929566880931 58.42666563796996 523.944292731907 58.42666563796996 523.944292731907 58.42666563796996C523.944292731907 58.42666563796996 528.795628775721 58.42666563796996 528.795628775721 58.42666563796996C528.795628775721 58.42666563796996 533.6469648195349 58.42666563796996 533.6469648195349 58.42666563796996C533.6469648195349 58.42666563796996 538.4983008633488 58.42666563796996 538.4983008633488 58.42666563796996C538.4983008633488 58.42666563796996 543.3496369071628 58.42666563796996 543.3496369071628 58.42666563796996C543.3496369071628 58.42666563796996 548.2009729509768 58.42666563796996 548.2009729509768 58.42666563796996C548.2009729509768 58.42666563796996 553.0523089947908 58.42666563796996 553.0523089947908 58.42666563796996C553.0523089947908 58.42666563796996 557.9036450386047 58.42666563796996 557.9036450386047 58.42666563796996C557.9036450386047 58.42666563796996 562.7549810824187 58.42666563796996 562.7549810824187 58.42666563796996C562.7549810824187 58.42666563796996 567.6063171262326 58.42666563796996 567.6063171262326 58.42666563796996C567.6063171262326 58.42666563796996 572.4576531700466 58.42666563796996 572.4576531700466 58.42666563796996C572.4576531700466 58.42666563796996 577.3089892138605 58.42666563796996 577.3089892138605 58.42666563796996C577.3089892138605 58.42666563796996 582.1603252576745 58.42666563796996 582.1603252576745 58.42666563796996C582.1603252576745 58.42666563796996 587.0116613014884 58.42666563796996 587.0116613014884 58.42666563796996C587.0116613014884 58.42666563796996 591.8629973453023 58.42666563796996 591.8629973453023 58.42666563796996C591.8629973453023 58.42666563796996 596.7143333891163 58.42666563796996 596.7143333891163 58.42666563796996C596.7143333891163 58.42666563796996 601.5656694329302 58.42666563796996 601.5656694329302 58.42666563796996C601.5656694329302 58.42666563796996 606.4170054767443 58.42666563796996 606.4170054767443 58.42666563796996C606.4170054767443 58.42666563796996 611.2683415205582 58.42666563796996 611.2683415205582 58.42666563796996C611.2683415205582 58.42666563796996 616.1196775643722 58.42666563796996 616.1196775643722 58.42666563796996C616.1196775643722 58.42666563796996 620.9710136081861 58.42666563796996 620.9710136081861 58.42666563796996C620.9710136081861 58.42666563796996 625.8223496520001 58.42666563796996 625.8223496520001 58.42666563796996C625.8223496520001 58.42666563796996 630.673685695814 58.42666563796996 630.673685695814 58.42666563796996C630.673685695814 58.42666563796996 635.525021739628 58.42666563796996 635.525021739628 58.42666563796996C635.525021739628 58.42666563796996 640.3763577834419 58.42666563796996 640.3763577834419 58.42666563796996C640.3763577834419 58.42666563796996 645.2276938272558 58.42666563796996 645.2276938272558 58.42666563796996C645.2276938272558 58.42666563796996 650.0790298710698 58.42666563796996 650.0790298710698 58.42666563796996C650.0790298710698 58.42666563796996 654.9303659148837 58.42666563796996 654.9303659148837 58.42666563796996C654.9303659148837 58.42666563796996 659.7817019586977 58.42666563796996 659.7817019586977 58.42666563796996C659.7817019586977 58.42666563796996 664.6330380025117 58.42666563796996 664.6330380025117 58.42666563796996C664.6330380025117 58.42666563796996 669.4843740463257 58.42666563796996 669.4843740463257 58.42666563796996C669.4843740463257 58.42666563796996 674.3357100901396 58.42666563796996 674.3357100901396 58.42666563796996C674.3357100901396 58.42666563796996 679.1870461339536 58.42666563796996 679.1870461339536 58.42666563796996C679.1870461339536 58.42666563796996 684.0383821777675 58.42666563796996 684.0383821777675 58.42666563796996C684.0383821777675 58.42666563796996 688.8897182215815 58.42666563796996 688.8897182215815 58.42666563796996C688.8897182215815 58.42666563796996 693.7410542653954 58.42666563796996 693.7410542653954 58.42666563796996C693.7410542653954 58.42666563796996 698.5923903092093 58.42666563796996 698.5923903092093 58.42666563796996C698.5923903092093 58.42666563796996 703.4437263530233 58.42666563796996 703.4437263530233 58.42666563796996C703.4437263530233 58.42666563796996 708.2950623968372 58.42666563796996 708.2950623968372 58.42666563796996C708.2950623968372 58.42666563796996 713.1463984406512 58.42666563796996 713.1463984406512 58.42666563796996C713.1463984406512 58.42666563796996 717.9977344844651 58.42666563796996 717.9977344844651 58.42666563796996C717.9977344844651 58.42666563796996 722.8490705282792 58.42666563796996 722.8490705282792 58.42666563796996C722.8490705282792 58.42666563796996 727.7004065720931 58.42666563796996 727.7004065720931 58.42666563796996C727.7004065720931 58.42666563796996 732.5517426159071 58.42666563796996 732.5517426159071 58.42666563796996C732.5517426159071 58.42666563796996 737.403078659721 58.42666563796996 737.403078659721 58.42666563796996C737.403078659721 58.42666563796996 742.254414703535 58.42666563796996 742.254414703535 58.42666563796996C742.254414703535 58.42666563796996 747.1057507473489 58.42666563796996 747.1057507473489 58.42666563796996C747.1057507473489 58.42666563796996 751.9570867911629 58.42666563796996 751.9570867911629 58.42666563796996C751.9570867911629 58.42666563796996 756.8084228349768 58.42666563796996 756.8084228349768 58.42666563796996C756.8084228349768 58.42666563796996 761.6597588787907 58.42666563796996 761.6597588787907 58.42666563796996C761.6597588787907 58.42666563796996 766.5110949226047 58.42666563796996 766.5110949226047 58.42666563796996C766.5110949226047 58.42666563796996 771.3624309664186 58.42666563796996 771.3624309664186 58.42666563796996C771.3624309664186 58.42666563796996 776.2137670102326 58.42666563796996 776.2137670102326 58.42666563796996C776.2137670102326 58.42666563796996 781.0651030540466 58.42666563796996 781.0651030540466 58.42666563796996C781.0651030540466 58.42666563796996 785.9164390978606 58.42666563796996 785.9164390978606 58.42666563796996C785.9164390978606 58.42666563796996 790.7677751416745 58.42666563796996 790.7677751416745 58.42666563796996C790.7677751416745 58.42666563796996 795.6191111854885 58.42666563796996 795.6191111854885 58.42666563796996C795.6191111854885 58.42666563796996 800.4704472293024 58.42666563796996 800.4704472293024 58.42666563796996C800.4704472293024 58.42666563796996 805.3217832731164 58.42666563796996 805.3217832731164 58.42666563796996C805.3217832731164 58.42666563796996 810.1731193169303 58.42666563796996 810.1731193169303 58.42666563796996C810.1731193169303 58.42666563796996 815.0244553607442 58.42666563796996 815.0244553607442 58.42666563796996C815.0244553607442 58.42666563796996 819.8757914045582 58.42666563796996 819.8757914045582 58.42666563796996C819.8757914045582 58.42666563796996 824.7271274483721 58.42666563796996 824.7271274483721 58.42666563796996C824.7271274483721 58.42666563796996 829.5784634921861 58.42666563796996 829.5784634921861 58.42666563796996C829.5784634921861 58.42666563796996 834.429799536 58.42666563796996 834.429799536 58.42666563796996C834.429799536 58.42666563796996 839.2811355798141 58.42666563796996 839.2811355798141 58.42666563796996C839.2811355798141 58.42666563796996 844.132471623628 58.42666563796996 844.132471623628 58.42666563796996C844.132471623628 58.42666563796996 848.983807667442 58.42666563796996 848.983807667442 58.42666563796996C848.983807667442 58.42666563796996 853.8351437112559 58.42666563796996 853.8351437112559 58.42666563796996C853.8351437112559 58.42666563796996 858.6864797550699 58.42666563796996 858.6864797550699 58.42666563796996C858.6864797550699 58.42666563796996 863.5378157988838 58.42666563796996 863.5378157988838 58.42666563796996C863.5378157988838 58.42666563796996 868.3891518426977 58.42666563796996 868.3891518426977 58.42666563796996C868.3891518426977 58.42666563796996 873.2404878865117 58.42666563796996 873.2404878865117 58.42666563796996C873.2404878865117 58.42666563796996 878.0918239303256 58.42666563796996 878.0918239303256 58.42666563796996C878.0918239303256 58.42666563796996 882.9431599741396 58.42666563796996 882.9431599741396 58.42666563796996C882.9431599741396 58.42666563796996 887.7944960179535 58.42666563796996 887.7944960179535 58.42666563796996C887.7944960179535 58.42666563796996 892.6458320617675 58.42666563796996 892.6458320617675 58.42666563796996C892.6458320617675 58.42666563796996 892.6458320617675 58.42666563796996 892.6458320617675 58.42666563796996 "></path></svg><veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;-moz-tab-size:4;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;-moz-appearance:textfield;appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button;-moz-appearance:button;appearance:button}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{-webkit-appearance:none;-moz-appearance:none;appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{-webkit-appearance:button;-moz-appearance:button;appearance:button;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}.lock-screen{font-family:FigtreeVF,sans-serif;letter-spacing:normal;position:fixed;z-index:2147483638;top:0;right:0;bottom:0;left:0;padding:32px 40px;color:#222e3a;background-color:#fdfdfd;display:flex;flex-direction:column;row-gap:12px;overflow:auto;background-image:radial-gradient(circle at 0% 0%,#e6fffdcc,#e6fffd00 50%),radial-gradient(circle at 100% 0%,#ebfffecc,#ebfffe00 50%),radial-gradient(circle at 100% 100%,#f0f5ffcc,#f0f5ff00 50%),radial-gradient(circle at 0% 100%,#f2f2ffcc,#f2f2ff00 50%),radial-gradient(circle at 50% 50%,#fff,#fffc,#f5f5ff66,#f0f0ff33,#f0f0ff00),linear-gradient(to bottom right,#e6fffd,#f2f2ff);background-size:100% 100%;background-repeat:no-repeat}.lock-screen__header{display:flex;align-items:center;justify-content:space-between}.lock-screen__logo{display:inline-flex;align-items:center;column-gap:12px;font-size:18px;font-weight:600}.lock-screen__close{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background-color:#222e3a1a}.lock-screen__main{flex-grow:1;align-content:center}.lock-screen__container{max-width:1120px;margin-inline:auto;display:flex;align-items:center;gap:24px}@media (width < 972px){.lock-screen__container{flex-direction:column}}.lock-screen__timer{display:flex;align-items:center;justify-content:center;width:100%}.lock-screen__content{width:100%}.lock-screen__title{font-size:48px;font-weight:700;line-height:56px;margin-bottom:16px}.lock-screen__description{font-size:18px;line-height:32px;margin-bottom:24px}.lock-screen__actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.lock-screen__action{height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;text-align:center;padding:8px 24px}.upgrade-btn{color:#fff;background:linear-gradient(180deg,#20df9e,#13cf8f)}.skip-btn{color:#3066ff;border-width:1px;border-style:solid;border-color:#3066ff;position:relative}.skip-btn__tooltip{font-size:14px;line-height:24px;font-weight:400;position:absolute;z-index:1;left:50%;top:calc(100% + 18px);padding:8px 12px;color:#fff;border:1px solid #4a5764;background-color:#222e3a;border-radius:8px;width:max-content;pointer-events:none;animation:slide-in .6s ease-in-out forwards}@keyframes slide-in{0%{opacity:0;transform:translate(-50%,-100%)}to{opacity:1;transform:translate(-50%)}}.skip-btn__tooltip:after{content:"";display:block;position:absolute;z-index:1;top:-8px;left:50%;width:0;height:0;border-style:solid;border-width:0 8px 8px;border-color:transparent transparent #222e3a;transform:translate(-6px)}.skip-btn__icon{display:none}.skip-btn:disabled{cursor:not-allowed}.skip-btn:disabled .skip-btn__tooltip,.skip-btn:disabled .skip-btn__text{display:none}.skip-btn:disabled .skip-btn__icon{display:initial;animation:tick-tock .8s steps(8,end) infinite}@keyframes tick-tock{to{transform:rotate(360deg)}}.timer{position:relative;max-width:422px;width:100%;aspect-ratio:1/1;border-radius:50%;background-color:#fff;box-shadow:0 0 40px #2b374114;display:flex;align-items:center;justify-content:center;pointer-events:none;-webkit-user-select:none;user-select:none}.timer__circle-backward{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;max-width:100%;height:auto;opacity:.4}.timer__circle-forward{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);z-index:1;max-width:100%;height:auto;animation:sector 5s linear forwards}.timer__fire-icon{position:absolute;top:22%;left:50%;transform:translate(-50%);z-index:2}.timer__text{font-size:clamp(18px,10vw,88px);letter-spacing:-1px;text-align:center;font-variant-numeric:tabular-nums;position:relative;z-index:3}.timer--finished .timer__text{color:#98a0a9}.timer--finished .timer__circle-forward{display:none}@keyframes sector{0%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,0% 100%,0% 2%)}25%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,0% 100%,0% 100%)}25.000001%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,0% 100%)}50%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,100% 100%)}50.000001%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%)}75%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 0%)}75.000001%{clip-path:polygon(50% 50%,0% 2%,100% 0%)}to{clip-path:polygon(50% 50%,0% 2%,0% 0%)}}@media (prefers-color-scheme: dark){.lock-screen{color:#fff;background-image:radial-gradient(circle at 0% 0%,#2f4f4fcc,#2f4f4f00 50%),radial-gradient(circle at 100% 0%,#193042cc,#19304200 50%),radial-gradient(circle at 100% 100%,#1c3041cc,#1c304100 50%),radial-gradient(circle at 0% 100%,#1b263bcc,#1b263b00 50%),radial-gradient(circle at 50% 50%,#141e28,#141e28cc,#1b263b66,#1c304133,#1c304100),linear-gradient(to bottom right,#2f4f4f,#1b263b)}.lock-screen__close{background-color:#ffffff1a}.skip-btn{color:#fff;border-color:#fff}.skip-btn__tooltip{color:#222e3a;border:1px solid #f5f6f7;background-color:#fff}.skip-btn__tooltip:after{border-color:transparent transparent #fff}.timer{background-color:#191b25}.timer__circle-backward{opacity:1}.timer--finished .timer__text{color:#5c6977}}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen><veepn-guard-alert><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;-moz-tab-size:4;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;-moz-appearance:textfield;appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button;-moz-appearance:button;appearance:button}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{-webkit-appearance:none;-moz-appearance:none;appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{-webkit-appearance:button;-moz-appearance:button;appearance:button;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}.guard-popup{font-family:FigtreeVF,sans-serif;position:fixed;z-index:2147483638;top:8px;left:24px;overflow:visible;color:#222e3a;background-color:#fff;max-width:416px;width:calc(100% - 48px);border-radius:16px;box-shadow:0 4px 20px #00000040;padding:24px}.guard-popup__header{display:flex;justify-content:space-between;align-items:center;column-gap:16px;margin-bottom:24px}.guard-popup__close{display:flex;align-items:center;justify-content:center;width:24px;height:24px;opacity:.7}.guard-popup__img{line-height:0;margin-bottom:24px}.guard-popup__img img{width:100%;aspect-ratio:368/142;object-fit:cover;border-radius:12px;overflow:hidden}.guard-popup__title{font-size:24px;line-height:32px;margin-bottom:8px}.guard-popup__description{font-size:20px;line-height:28px;font-weight:500;color:#4a5764;margin-bottom:28px}.guard-popup__actions{display:flex;justify-content:flex-end;column-gap:16px}.guard-popup__btn{display:flex;align-items:center;justify-content:center;padding:8px 16px;border-radius:5px;font-size:16px;line-height:24px;font-weight:700;cursor:pointer;color:#fff;background:linear-gradient(180deg,#5695fd,#1554ff)}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-guard-alert><div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"languages":["en","fr","it","es","de","cs","pt","nl","da","ar"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
     </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

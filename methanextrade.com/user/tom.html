@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture Trading Challenges</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+   body {
+      font-family: "Inter", "Poppins", sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      min-height: 100vh;
+    }
+
+    /* Enhanced unordered list styling for professionalism and appeal */
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1.5em;
+      margin-bottom: 0.5em;
+      transition: color 0.3s ease;
+    }
+
+    ul li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+      font-size: 1.2em;
+      line-height: 1;
+      top: 0;
+      transition: color 0.3s ease;
+    }
+
+    ul li:hover {
+      color: #2563eb;
+    }
+
+    ul li:hover::before {
+      color: #1d4ed8;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 280px;
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      color: #f8fafc;
+      padding: 1.5rem;
+      z-index: 1000;
+      box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+    }
+    .sidebar h3 {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #cbd5e1;
+      padding: 0.75rem 1rem;
+      margin: 0.25rem 0;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .sidebar a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+      transform: translateX(5px);
+    }
+    .sidebar a i {
+      font-size: 1.1rem;
+      width: 24px;
+    }
+
+    /* Content */
+    main.container {
+      margin-left: 280px;
+      max-width: calc(100% - 280px);
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    @media (max-width: 991px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+      main.container {
+        margin-left: 0;
+        max-width: 100%;
+      }
+    }
+
+    /* Section Titles */
+    .section-title {
+      color: #1e293b;
+      font-weight: 600;
+      font-size: 1.2rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Balance Box */
+    .balance-box {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(16,185,129,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .balance-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 0.2; }
+      100% { transform: scale(1); opacity: 0.5; }
+    }
+
+    /* Challenge Cards */
+    .card {
+      border: none;
+      border-radius: 20px;
+      padding: 2rem;
+      background: linear-gradient(135deg, #1e3a8a, #1e293b);
+      color: #f1f5f9;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(30,58,138,0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .card::before {
+      content: "\f091"; /* trophy icon */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.05);
+      transform: rotate(-15deg);
+      transition: all 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(30,58,138,0.4);
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+    }
+    .card:hover::before {
+      transform: rotate(-25deg) scale(1.2);
+      opacity: 0.1;
+    }
+    .card h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #dbeafe;
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card p strong {
+      color: #fff;
+      min-width: 120px;
+    }
+
+    /* Buttons */
+    .card .btn-custom {
+      background: #10b981;
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .card .btn-custom:hover {
+      background: #059669;
+      box-shadow: 0 0 15px rgba(16,185,129,0.6);
+    }
+    .btn-warning {
+      background: #f59e0b !important;
+      border: none;
+      color: #fff !important;
+    }
+
+    /* Progress Bars */
+    .progress {
+      height: 10px;
+      border-radius: 6px;
+      background: #e5e7eb;
+    }
+    .progress-bar {
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    /* Modal */
+    .modal-content {
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h3><i class="fa-solid fa-seedling"></i> AgriTrade</h3>
+    <a href="#"><i class="fa-solid fa-home"></i> Dashboard</a>
+    <a href="#"><i class="fa-solid fa-list"></i> Challenges</a>
+    <a href="#"><i class="fa-solid fa-chart-line"></i> My Trades</a>
+    <a href="#"><i class="fa-solid fa-wallet"></i> Wallet</a>
+  </div>
+
+ <!-- Main Co ntent -->
+  <main class="container">
+    <!-- Challenge Balance -->
+    <div id="challengeBalanceBox" class="balance-box">
+      Challenge Balance: $0
+    </div>
+
+    <!-- Available Challenges -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-list"></i> Available Challenges</h2>
+      <div id="challengesList" class="row g-4"></div>
+    </section>
+
+    <!-- My Active Challenges -->
+    <section class="mt-5">
+      <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> My Challenges</h2>
+      <div id="myChallenges" class="row g-4"></div>
+    </section>
+  </main>
+
+  <!-- Fund Modal -->
+  <div class="modal fade" id="fundModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-solid fa-wallet"></i> Fund Challenge Balance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">Amount</label>
+          <input type="number" id="fundAmount" class="form-control" placeholder="Enter amount">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" onclick="fundBalance()">Fund</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Withdraw Modal -->
+  <div class="modal fade" id="withdrawModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-solid fa-money-bill-wave"></i> Withdraw Balance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">Amount</label>
+          <input type="number" id="withdrawAmount" class="form-control" placeholder="Enter amount">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-warning" onclick="withdrawBalance()">Withdraw</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ✅ Simulate localStorage user
+    if (!localStorage.getItem("user")) {
+      const demoUser = {
+        id: "user123",
+        firstName: "Test",
+        challengeBalance: 5000,
+      };
+      localStorage.setItem("user", JSON.stringify(demoUser));
+    }
+
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    const challenges = [
+      {
+        id: 1,
+        title: "Challenge 1",
+        entryFee: 1000,
+        duration: 30,
+        expectedProfitRate: "80%",
+        minProfit: 1000,
+        reward: "x2 (double your profit)",
+        rewardValue: 2000
+      },
+      {
+        id: 2,
+        title: "Challenge 2",
+        entryFee: 2000,
+        duration: 45,
+        expectedProfitRate: "60%",
+        minProfit: 1500,
+        reward: "$12,000 fixed reward",
+        rewardValue: 12000
+      }
+    ];
+
+    let myChallenges = [];
+
+    function renderBalance() {
+      document.getElementById("challengeBalanceBox").innerText =
+        `Challenge Balance: $${user.challengeBalance}`;
+    }
+
+    function renderChallenges() {
+      const challengesList = document.getElementById("challengesList");
+      challengesList.innerHTML = "";
+
+      challenges.forEach(c => {
+        const div = document.createElement("div");
+        div.className = "col-12 col-md-6 col-lg-4";
+        div.innerHTML = `
+          <div class="card p-4 h-100">
+            <h4>${c.title}</h4>
+            <p><strong>Entry Fee:</strong> $${c.entryFee}</p>
+            <p><strong>Duration:</strong> ${c.duration} days</p>
+            <p><strong>Expected Profit Rate:</strong> ${c.expectedProfitRate}</p>
+            <p><strong>Minimum Profit:</strong> $${c.minProfit}</p>
+            <p><strong>Reward:</strong> ${c.reward}</p>
+            <button class="btn btn-custom mt-2" onclick="joinChallenge(${c.id})">
+              <i class="fa-solid fa-door-open"></i> Join Challenge
+            </button>
+          </div>
+        `;
+        challengesList.appendChild(div);
+      });
+    }
+
+    function renderMyChallenges() {
+      const myList = document.getElementById("myChallenges");
+      myList.innerHTML = "";
+
+      myChallenges.forEach(mc => {
+        const progressPercent = Math.min(
+          (mc.profit / mc.rewardValue) * 100,
+          100
+        ).toFixed(1);
+
+        const div = document.createElement("div");
+        div.className = "col-12 col-md-6 col-lg-4";
+        div.innerHTML = `
+          <div class="card p-4 h-100">
+            <h4>${mc.title}</h4>
+            <p><strong>Progress:</strong> $${mc.profit} / $${mc.rewardValue}</p>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-success" role="progressbar" style="width: ${progressPercent}%">
+                ${progressPercent}%
+              </div>
+            </div>
+            <p><strong>Days Left:</strong> ${mc.daysLeft}</p>
+            <button class="btn btn-success mt-2" onclick="claimReward(${mc.id})"
+              ${mc.profit < mc.minProfit ? "disabled" : ""}>
+              <i class="fa-solid fa-trophy"></i> Claim Reward
+            </button>
+          </div>
+        `;
+        myList.appendChild(div);
+      });
+    }
+
+    function joinChallenge(id) {
+      const challenge = challenges.find(c => c.id === id);
+
+      if (user.challengeBalance < challenge.entryFee) {
+        Swal.fire("Insufficient Balance", "Please fund your challenge balance.", "error");
+        return;
+      }
+
+      user.challengeBalance -= challenge.entryFee;
+      localStorage.setItem("user", JSON.stringify(user));
+      renderBalance();
+
+      myChallenges.push({
+        ...challenge,
+        profit: 0,
+        daysLeft: challenge.duration
+      });
+
+      Swal.fire("Joined!", `You successfully joined ${challenge.title}`, "success");
+      renderMyChallenges();
+    }
+
+    function claimReward(id) {
+      const challenge = myChallenges.find(c => c.id === id);
+      if (!challenge) return;
+
+      Swal.fire("Reward Claimed!", `You claimed: ${challenge.reward}`, "success");
+    }
+
+    // ✅ Fund Balance
+    function fundBalance() {
+      const amount = parseFloat(document.getElementById("fundAmount").value);
+      if (isNaN(amount) || amount <= 0) {
+        Swal.fire("Invalid Amount", "Please enter a valid funding amount.", "error");
+        return;
+      }
+      user.challengeBalance += amount;
+      localStorage.setItem("user", JSON.stringify(user));
+      renderBalance();
+      Swal.fire("Success!", `You funded $${amount} to your challenge balance.`, "success");
+      document.getElementById("fundAmount").value = "";
+      bootstrap.Modal.getInstance(document.getElementById("fundModal")).hide();
+    }
+
+    // ✅ Withdraw Balance
+    function withdrawBalance() {
+      const amount = parseFloat(document.getElementById("withdrawAmount").value);
+      if (isNaN(amount) || amount <= 0) {
+        Swal.fire("Invalid Amount", "Please enter a valid withdrawal amount.", "error");
+        return;
+      }
+      if (amount > user.challengeBalance) {
+        Swal.fire("Insufficient Balance", "You do not have enough funds to withdraw.", "error");
+        return;
+      }
+      user.challengeBalance -= amount;
+      localStorage.setItem("user", JSON.stringify(user));
+      renderBalance();
+      Swal.fire("Success!", `You withdrew $${amount} from your challenge balance.`, "success");
+      document.getElementById("withdrawAmount").value = "";
+      bootstrap.Modal.getInstance(document.getElementById("withdrawModal")).hide();
+    }
+
+    // ✅ Initialize
+    renderBalance();
+    renderChallenges();
+    renderMyChallenges();
+  </script>
+</body>
+</html>
