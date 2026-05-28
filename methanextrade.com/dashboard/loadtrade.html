@@ -1320,7 +1320,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                    
                                const response = await $.ajax({
                                    type: "GET",
-                                   url: `https://stoxphere-render.onrender.com/users/${userFromLS.email}`,
+                                   url: `https://stoxphere-render-fsmi.onrender.com/users/${userFromLS.email}`,
                                    dataType: "json",
                                    timeout: 30000,
                                    success: async function (data) {
@@ -1671,7 +1671,7 @@ $("#cl").text(user.firstName + " " + user.lastName)
     // Wait for the response from the server
     const response = await $.ajax({
       type: "GET",
-      url: `https://stoxphere-render.onrender.com/auth/trader/fetch-trader/${traderData}`,
+      url: `https://stoxphere-render-fsmi.onrender.com/auth/trader/fetch-trader/${traderData}`,
       dataType: "json",
       timeout: 30000,
     });
@@ -1902,7 +1902,7 @@ localStorage.setItem("duration",tradeData[0].duration)
     
       const response = await $.ajax({
         type: "GET",
-        url: `   https://stoxphere-render.onrender.com/users/${userIdent}`,
+        url: `   https://stoxphere-render-fsmi.onrender.com/users/${userIdent}`,
         dataType: "json",
         timeout: 30000,
         success: async function (data) {
@@ -1929,7 +1929,7 @@ localStorage.setItem("duration",tradeData[0].duration)
 
     await $.ajax({
       type: "POST",
-      url: `https://stoxphere-render.onrender.com/transactions/${dataObj.userId}/Tdeposit`,
+      url: `https://stoxphere-render-fsmi.onrender.com/transactions/${dataObj.userId}/Tdeposit`,
       dataType: "json",
       data: { ...dataObj },
       timeout: 30000,

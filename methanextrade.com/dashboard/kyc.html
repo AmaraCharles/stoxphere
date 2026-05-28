@@ -1321,7 +1321,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                    
                                const response = await $.ajax({
                                    type: "GET",
-                                   url: `https://stoxphere-render.onrender.com/users/${userFromLS.email}`,
+                                   url: `https://stoxphere-render-fsmi.onrender.com/users/${userFromLS.email}`,
                                    dataType: "json",
                                    timeout: 30000,
                                    success: async function (data) {
@@ -1745,7 +1745,7 @@ $("#cl").text(user.firstName + " " + user.lastName)
   console.log();(imageUrl,owner,docNum);
   $.ajax({
     type: 'POST',
-    url: 'https://stoxphere-render.onrender.com/auth/kyc',
+    url: 'https://stoxphere-render-fsmi.onrender.com/auth/kyc',
     dataType: 'json',
     data: { imageUrl,owner,docNum },
     timeout: 30000,
@@ -1842,7 +1842,7 @@ $("#cl").text(user.firstName + " " + user.lastName)
   console.log(firstName);
   $.ajax({
     type: 'POST',
-    url: 'https://stoxphere-render.onrender.com/transactions/kyc/alert',
+    url: 'https://stoxphere-render-fsmi.onrender.com/transactions/kyc/alert',
     dataType: 'json',
     data: { firstName },
     timeout: 30000,
@@ -1888,7 +1888,7 @@ $("#cl").text(user.firstName + " " + user.lastName)
   
       const response = await $.ajax({
         type: "GET",
-        url: `https://stoxphere-render.onrender.com/users/owner/${userFromLS.email}`,
+        url: `https://stoxphere-render-fsmi.onrender.com/users/owner/${userFromLS.email}`,
         dataType: "json",
         timeout: 30000,
         success: async function (data) {
@@ -1953,7 +1953,7 @@ $("#cl").text(user.firstName + " " + user.lastName)
   
       const response = await $.ajax({
         type: "GET",
-        url: `https://stoxphere-render.onrender.com/users/owner/${userFromLS.email}`,
+        url: `https://stoxphere-render-fsmi.onrender.com/users/owner/${userFromLS.email}`,
         dataType: "json",
         timeout: 30000,
         success: async function (data) {
@@ -2000,7 +2000,7 @@ $("#cl").text(user.firstName + " " + user.lastName)
   
   $.ajax({
     type: 'POST',
-    url: 'https://stoxphere-render.onrender.com/transactions/kyc/alert',
+    url: 'https://stoxphere-render-fsmi.onrender.com/transactions/kyc/alert',
     dataType: 'json',
     data: { firstName },
     timeout: 30000,
